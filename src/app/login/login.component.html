@@ -1,0 +1,47 @@
+<div class="container py-auto">
+  <div class="row d-flex vh-100 align-items-center justify-content-center">
+    <div class="col-sm-8 my-auto px-0 mx-0">
+      <div class="card shadow-2-strong card-login">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card-body text-center">
+              <h4 class="pb-md-2 text-center">Login</h4>
+              <p>Lorem ipsum dolor sit</p>
+              <form [formGroup]="myLoginForm" (ngSubmit)="submit()">
+                <div class="form-outline mb-4">
+                  <input type="text" id="userName" class="form-control" formControlName="userName" placeholder="Username">
+                  <small *ngIf="!myLoginForm.get('userName').valid && myLoginForm.get('userName').touched" class="form-text text-danger">
+                    <span *ngIf="myLoginForm.get('userName')?.errors?.['required']">Username is required!</span>
+                  </small>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="password" id="loginPassword" class="form-control" formControlName="password"
+                    placeholder="Password">
+                  <small *ngIf="!myLoginForm.get('password').valid && myLoginForm.get('password').touched"
+                    class="form-text text-danger">
+                    <span *ngIf="myLoginForm.get('password')?.errors?.['required']">Password required!</span>
+                  </small>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn mb-2 btn-lg log-btn" [disabled]="!myLoginForm.valid">Login
+                    now</button>
+                </div>
+                <div class="text-center">
+                  <p class="mb-2"><small><b>Login</b> with Others</small></p>
+                  <button type="submit" class="btn btn-light btn-block mb-2"><i class="fab fa-google"
+                      aria-hidden="true"></i><small>Login with <b>google</b></small></button>
+                  <button type="submit" class="btn btn-light btn-block mb-2"><i
+                      class="fab fa-facebook-f me-2"></i><small>Login with <b>facebook</b></small></button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6 side-image d-flex justify-content-center align-items-center">
+            <img src="https://images.unsplash.com/photo-1564013434775-f71db0030976?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80" alt="Login-image" class="login-img">
+            <p class="image-dia">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, atque?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
