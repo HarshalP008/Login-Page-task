@@ -21,16 +21,13 @@ export class LoginComponent implements OnInit {
     })
   }
   submit() {
-    localStorage.clear();
     let loggedInUser = this.myLoginForm.value;
-    localStorage.setItem('user', loggedInUser);
     localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
     this.empDetails= JSON.parse(localStorage.getItem('loggedInUser') || '{}');
     console.log(this.empDetails.password,this.empDetails);
-    if (this.empDetails.userName === 'admin' || this.empDetails.password === "admin") {
+    if (this.empDetails.userName === 'admin' && this.empDetails.password === "admin") {
       this.router.navigate(['home'])
       } else {
-        console.log('error');
         alert('wrong Username or password');
       }
     }
