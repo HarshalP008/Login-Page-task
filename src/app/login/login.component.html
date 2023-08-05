@@ -1,46 +1,48 @@
 <div class="container py-auto">
-  <div class="row d-flex vh-100 align-items-center justify-content-center">
-    <div class="col-sm-8 my-auto px-0 mx-0">
-      <div class="card shadow-2-strong card-login">
+  <div class="row d-flex vh-100 justify-content-center">
+    <div class="col-sm-8 my-auto">
+      <div class="card shadow">
         <div class="row">
           <div class="col-lg-6">
             <div class="card-body text-center">
-              <h4 class="pb-md-2 text-center"><b>Login</b></h4>
+              <h4 class="pb-md-2"><b>Login</b></h4>
               <p>Lorem ipsum dolor sit</p>
               <form [formGroup]="myLoginForm" (ngSubmit)="submit()">
                 <div class="form-outline mb-4">
-                  <input type="text" id="userName" class="form-control" formControlName="userName" placeholder="Username">
-                  <small *ngIf="!myLoginForm.get('userName').valid && myLoginForm.get('userName').touched" class="form-text text-danger">
-                    <span *ngIf="myLoginForm.get('userName')?.errors?.['required']">Username is required!</span>
-                  </small>
+                  <div class="user-input">
+                    <i class="far fa-user icon"></i>
+                    <input type="text" id="userName" class="form-control input-field" formControlName="userName" placeholder="Username">
+                    <small *ngIf="!myLoginForm.get('userName').valid && myLoginForm.get('userName').touched" class="form-text text-danger">
+                      <span *ngIf="myLoginForm.get('userName')?.errors?.['required']">Username is required!</span>
+                      <span *ngIf="myLoginForm.get('userName')?.errors?.['minlength']">Minimun 5 chars required</span>
+                    </small>
+                  </div>
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="password" id="loginPassword" class="form-control" formControlName="password"
-                    placeholder="Password">
-                  <small *ngIf="!myLoginForm.get('password').valid && myLoginForm.get('password').touched"
-                    class="form-text text-danger">
-                    <span *ngIf="myLoginForm.get('password')?.errors?.['required']">Password required!</span>
-                  </small>
+                  <div class="user-input">
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" id="loginPassword" class="form-control input-field" formControlName="password" placeholder="Password">
+                    <small *ngIf="!myLoginForm.get('password').valid && myLoginForm.get('password').touched" class="form-text text-danger">
+                      <span *ngIf="myLoginForm.get('password')?.errors?.['required']">Password required!</span>
+                      <span *ngIf="myLoginForm.get('password')?.errors?.['minlength']">Minimun 5 chars required</span>
+                    </small>
+                  </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-sm mb-2 btn-lg log-btn" [disabled]="!myLoginForm.valid"><b>Login
-                    now</b></button>
+                  <button type="submit" class="btn btn-sm mb-2 btn-lg log-btn" [disabled]="!myLoginForm.valid"><b>Login now</b></button>
                 </div>
               </form>
               <div class="text-center">
-                  <hr>
-                  <p class="mb-2"><small><b>Login</b> with Others</small></p>
-                  <button class="btn btn-light btn-block mb-2"><i class="fab fa-google"
-                      aria-hidden="true"></i><small>Login with <b>google</b></small></button>
-                  <button class="btn btn-light btn-block mb-2"><i
-                      class="fab fa-facebook-f me-2"></i><small>Login with <b>facebook</b></small></button>
-                </div>
+                <p class="mb-2 login-opt"><span class="opt-line"><small><b>Login</b> with Others</small></span></p>
+                <button class="btn btn-light btn-block mb-2"><i class="fa-brands fa-google mr-2 text-primary"></i><small>Login with <b>Google</b></small></button>
+                <button class="btn btn-light btn-block mb-2"><i class="fa-brands fa-square-facebook fa-lg mr-2 text-primary"></i><small>Login with <b>Facebook</b></small></button>
+              </div>
             </div>
           </div>
           <div class="col-lg-6 side-image d-flex justify-content-center align-items-center">
             <img src="../../assets/claybanksunsplash.jpg" alt="Login-image" class="login-img">
-            <div  class="image-dia" style="width:50%; right:40px;">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, atque?</p>
+            <div class="image-dia" style="width:50%; right:40px;">
+              <p>"Lorem, ipsum dolor sit amet consectetur adipisicing elit"</p>
             </div>
           </div>
         </div>

@@ -1,20 +1,62 @@
-.card{
-  border-radius:15px;
-  align-items:center;
+.card {
+  border-radius: 15px;
+  align-items: center;
   box-sizing: border-box;
   object-fit: cover;
-  overflow:hidden
+  overflow: hidden
 }
-.login-img{
+.login-img {
   width: 100%;
   height: 100%;
-  position:absolute;
+  position: absolute;
 }
-.image-dia{
+.user-input{
   position:relative;
-  color:#fff;
 }
-.log-btn{
- background-color: plum;
-  color: black;
+.icon {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color:#808080;
+}
+.input-field{
+  padding-left: 44px;
+}
+.image-dia {
+  position: relative;
+  color: #fff;
+}
+.log-btn {
+  background: linear-gradient(70deg, #e628ed, #924df8);
+  color: #fff;
+  font-weight: 100;
+}
+.login-opt {
+  font-size: smaller;
+  position:relative;
+  color:#924df8;
+  z-index:1;
+}
+.login-opt::before{
+  position:absolute;
+  content:"";
+  height:0.5px;
+  width:15%;
+  background:#808080;
+  left:15%;
+  top:50%;
+  z-index:-2;
+}
+.login-opt::after{
+  position:absolute;
+  content:"";
+  height:0.5px;
+  width:15%;
+  background:#808080;
+  right:15%;
+  top:50%;
+  z-index:-2;
+}
+.opt-line{
+  background:#fff;
 }
